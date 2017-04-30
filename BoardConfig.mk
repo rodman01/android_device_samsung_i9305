@@ -39,10 +39,6 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 TARGET_PREBUILT_KERNEL := device/samsung/i9305/kernel
 
-# Copy Boeffla: boeffla-config-v2 2.4.34 App
-PRODUCT_COPY_FILES += \
-    device/samsung/i9305/Boeffla/2.4.34-boeffla-config-v2.apk:system/app/Boeffla-Config.apk
-    
 # Copy BoefflaKernel zip
 PRODUCT_COPY_FILES += \
     device/samsung/i9305/Boeffla/Boeffla.zip:system/addon.d/Boeffla.zip
