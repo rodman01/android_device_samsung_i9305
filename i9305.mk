@@ -61,6 +61,9 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	libsecril-shim
+	
+PRODUCT_PROPERTY_OVERRIDES += \
+    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -112,7 +115,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ums_init.sh:system/bin/ums_init.sh
 
-$(call inherit-product-if-exists, vendor/samsung/i9300/i9300-vendor.mk)
+# Include device blobs first
+$(call inherit-product, vendor/samsung/i9305/i9305-vendor.mk)
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
